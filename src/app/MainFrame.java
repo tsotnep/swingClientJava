@@ -10,6 +10,9 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
 public class MainFrame extends JFrame {
+
+	private DetailsPanel detailsPanel;
+	
 	public MainFrame(String title) {
 		super(title);
 
@@ -20,18 +23,22 @@ public class MainFrame extends JFrame {
 		final JTextArea textArea = new JTextArea();
 		JButton button = new JButton("Click Me!");
 
+		detailsPanel = new DetailsPanel();
+
 		// add swing components to content pane
 		Container c = getContentPane();
 		c.add(textArea, BorderLayout.CENTER);
 		c.add(button, BorderLayout.SOUTH);
+		c.add(detailsPanel, BorderLayout.WEST);
 		
-		//add behavior
+
+		// add behavior
 		button.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				textArea.append("Hello\n");		
-				
+				textArea.append("Hello\n");
+
 			}
 		});
 
