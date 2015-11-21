@@ -24,11 +24,39 @@ public class DetailsPanel extends JPanel {
 		JTextField occupationField = new JTextField(10);
 
 		JButton addBtn = new JButton("Add");
-		
+
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
-		
 
+		//// first column
+		gc.anchor = GridBagConstraints.LINE_END;
+		gc.weightx = 0.5;
+		gc.weighty = 0.5;
+		gc.gridx = 0;
+		gc.gridy = 0;
+		add(nameLabel, gc);
+		gc.gridx = 0;
+		gc.gridy = 1;
+		add(occupationLabel, gc);
+
+		//// second column
+		gc.anchor = GridBagConstraints.LINE_START;
+		gc.gridx = 1;
+		gc.gridy = 0;
+		add(nameField, gc);
+		gc.gridx = 1;
+		gc.gridy = 1;
+		add(occupationField, gc);
+		
+		//// final row
+		gc.weighty = 10;
+//		gc.fill = GridBagConstraints.BOTH;
+		gc.anchor = GridBagConstraints.FIRST_LINE_START;
+		gc.gridx = 1;
+		gc.gridy = 2;
+		add(addBtn, gc);
+		
+		
 	}
 
 }
